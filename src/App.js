@@ -5,6 +5,7 @@ import Reviews from "./components/Reviews";
 import Categories from "./components/Categories";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import SingleReview from "./components/SingleReview";
 
 function App() {
   const [category, setCategory] = useState("");
@@ -14,8 +15,12 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Reviews />} />
-        <Route path="/reviews" element={<Reviews />} />
-        <Route path="/categories" element={<Categories />} />
+        <Route path="/reviews" element={<Reviews />}></Route>
+        <Route
+          path="/categories"
+          element={<Categories setCategory={setCategory} />}
+        />
+        <Route path="/reviews/:review_id" element={<SingleReview />} />
       </Routes>
     </div>
   );
