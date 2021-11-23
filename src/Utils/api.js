@@ -16,7 +16,12 @@ export const getCategories = () => {
 };
 export const getSingleReview = (id) => {
   return gamesAPI.get(`/reviews/${id}`).then((res) => {
-    console.log(res);
-    return res.data;
+    return res.data.review;
+  });
+};
+export const getReviewComments = (id) => {
+  return gamesAPI.get(`/reviews/${id}/comments`).then((res) => {
+    console.log(res, "=====");
+    return res.data.comments;
   });
 };
