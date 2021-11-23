@@ -1,7 +1,7 @@
 export default function Title() {
   return (
     <header className="Title">
-      <h1>TITLE</h1>
+      <h1>The Board Room</h1>
     </header>
   );
 }

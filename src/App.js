@@ -4,8 +4,10 @@ import Nav from "./components/Nav";
 import Reviews from "./components/Reviews";
 import Categories from "./components/Categories";
 import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
+  const [category, setCategory] = useState("");
   return (
     <div className="App">
       <Title />
