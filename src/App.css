@@ -1,27 +1,119 @@
 * {
   margin: 0;
   padding: 0;
+  color: rgb(29, 206, 216);
+  font-family: Calibri, "Trebuchet MS", sans-serif;
 }
+h1 {
+  color: rgb(0, 2, 73);
+}
+h2 {
+  color: rgb(246, 73, 13);
+  font-size: xxx-large;
+}
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50% 50% 25% 25%;
+  border: solid 2px rgb(246, 73, 13);
+}
+/* main {
+  border: solid red 1px;
+  overflow: scroll;
+} */
 .App {
+  background-color: rgb(0, 2, 73);
   text-align: center;
   min-height: 100vh;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: min-content min-content auto;
+  grid-template-rows: min-content min-content 615px;
+  grid-template-areas:
+    "Header"
+    "Nav"
+    "Main";
 }
 .Title {
-  border: solid blue 1px;
+  grid-area: Header;
+  padding-top: 0.5%;
+  font-size: 6vw;
+  background-color: rgb(242, 240, 224);
+  max-height: 150px;
 }
 .Nav {
-  border: solid green 1px;
+  grid-area: Nav;
+  background-color: rgb(29, 206, 216);
+  text-align: left;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
-main {
-  border: solid red 1px;
+.Nav__Link {
+  color: rgb(0, 2, 73);
+  margin-right: 10px;
+  margin-left: 10px;
+  font-weight: bold;
+  text-decoration: none;
 }
-img {
-  width: 100px;
-  height: 100px;
+.Nav__Link:hover {
+  color: rgb(246, 73, 13);
+}
+.Reviews {
+  text-decoration: none;
+  grid-area: Main;
+  display: grid;
+  grid-template-rows: 60px 597px;
+  grid-template-areas:
+    "reviews_sub_header"
+    "reviews";
+}
+.Reviews h2 {
+  grid-area: reviews_sub_header;
+}
+.Reviews ul {
+  grid-area: reviews;
+  overflow: scroll;
+  list-style: none;
+}
+.Reviews h3:hover {
+  color: rgb(246, 73, 13);
+}
+.Reviews li {
+  margin: 20px;
+}
+.Reviews a {
+  text-decoration: none;
+}
+.Categories {
+  grid-area: Main;
+  display: grid;
+  grid-template-rows: 60px 597px;
+  grid-template-areas:
+    "categories_sub_header"
+    "categories";
+}
+.Categories h2 {
+  grid-area: categories_sub_header;
 }
 .Categories ul {
   list-style: none;
+  grid-area: categories;
+  overflow: scroll;
 }
+.Categories li {
+  margin: 10px;
+}
+.Categories a {
+  text-decoration: none;
+}
+.Categories h3 {
+  font-weight: bolder;
+  font-size: x-large;
+}
+.Categories h3:hover {
+  color: rgb(246, 73, 13);
+}
+
+/* rgb(246, 73, 13) orange */
+/* rgb(0, 2, 73) navy
+rgb(29, 206, 216) cyan
+rgb(250, 249, 240) cream */

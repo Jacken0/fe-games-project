@@ -17,13 +17,12 @@ export default function SingleReview() {
       setComments(commentsFromServer);
     });
   }, []);
-  console.log(singleReview);
-  console.log(comments);
+
   return (
-    <>
+    <div className="SingleReview">
       <review>
         <img src={singleReview.review_img_url} alt={singleReview.title} />
-        <h2>{singleReview.title}</h2>
+        <h3>{singleReview.title}</h3>
         <h3>Author: {singleReview.owner}</h3>
         <h3>Designer: {singleReview.designer}</h3>
         <p>{singleReview.review_body}</p>
@@ -42,6 +41,6 @@ export default function SingleReview() {
           })}
         </ul>
       </comments>
-    </>
+    </div>
   );
 }
