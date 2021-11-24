@@ -1,15 +1,6 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getCategories } from "../Utils/api";
 
-export default function Categories({ setCategory }) {
-  const [categories, setCategories] = useState([]);
-  useEffect(() => {
-    getCategories().then((categoriesFromServer) => {
-      setCategories(categoriesFromServer);
-    });
-  }, []);
-
+export default function Categories({ categories }) {
   return (
     <main className="Categories">
       <h2>Categories</h2>

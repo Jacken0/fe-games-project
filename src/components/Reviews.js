@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { getReviews } from "../Utils/api";
 import { Link, useLocation } from "react-router-dom";
+import Sidebar from "./Sidebar";
 
-export default function Reviews() {
+export default function Reviews(categories) {
   const [reviews, setReviews] = useState([]);
 
   const { search } = useLocation();
@@ -16,7 +17,7 @@ export default function Reviews() {
   return (
     <main className="Reviews">
       <h2>Reviews</h2>
-      <ul>
+      <ul className="Reviews_List">
         {reviews.map((reviewData) => {
           return (
             <li key={reviewData.review_id}>
@@ -35,6 +36,7 @@ export default function Reviews() {
           );
         })}
       </ul>
+      <Sidebar categories={categories} />
     </main>
   );
 }

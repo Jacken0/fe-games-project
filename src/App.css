@@ -61,10 +61,11 @@ img {
   text-decoration: none;
   grid-area: Main;
   display: grid;
-  grid-template-rows: 60px 597px;
+  grid-template-rows: 60px 705px;
+  grid-template-columns: min-content auto;
   grid-template-areas:
-    "reviews_sub_header"
-    "reviews";
+    "reviews_sub_header reviews_sub_header"
+    "sidebar reviews";
 }
 .Reviews h2 {
   grid-area: reviews_sub_header;
@@ -82,6 +83,17 @@ img {
 }
 .Reviews a {
   text-decoration: none;
+}
+.Reviews_List {
+  padding-right: 150px;
+}
+.Sidebar {
+  grid-area: sidebar;
+  border-right: rgba(29, 207, 216, 0.226) solid;
+}
+
+.Sidebar h4:hover {
+  color: rgb(246, 73, 13);
 }
 .Categories {
   grid-area: Main;
@@ -111,6 +123,20 @@ img {
 }
 .Categories h3:hover {
   color: rgb(246, 73, 13);
+}
+.SingleReview {
+  display: grid;
+  grid-template-rows: min-content auto;
+  grid-template-areas:
+    "single_review"
+    "review_comments";
+}
+.SingleReview review {
+  grid-area: single_review;
+}
+.SingleReview comments {
+  grid-area: review_comments;
+  overflow: scroll;
 }
 
 /* rgb(246, 73, 13) orange */
