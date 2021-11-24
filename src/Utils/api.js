@@ -24,3 +24,8 @@ export const getReviewComments = (id) => {
     return res.data.comments;
   });
 };
+export const patchVotes = (id, number) => {
+  return gamesAPI
+    .patch(`/reviews/${id}`, { inc_votes: number })
+    .then((res) => {});
+};

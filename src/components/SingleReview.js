@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getReviewComments, getSingleReview } from "../Utils/api";
+import VoteReview from "./VoteReview";
 
 export default function SingleReview() {
   const { review_id } = useParams();
@@ -26,6 +27,7 @@ export default function SingleReview() {
         <h3>Author: {singleReview.owner}</h3>
         <h3>Designer: {singleReview.designer}</h3>
         <p>{singleReview.review_body}</p>
+        <VoteReview singleReview={singleReview} />
       </review>
       <comments>
         <ul>

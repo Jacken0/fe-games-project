@@ -9,6 +9,9 @@ export default function Nav() {
       <Link to="/categories" className="Nav__Link">
         Categories
       </Link>
+      <Link to="/login" className="Nav__Link" id="Nav__Login">
+        Login
+      </Link>
     </nav>
   );
 }
