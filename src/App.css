@@ -133,6 +133,11 @@ img {
   grid-area: review_comments;
   overflow: scroll;
 }
+.Vote__Button {
+  height: 60px;
+  width: 30px;
+  font-size: xx-large;
+}
 
 /* rgb(246, 73, 13) orange */
 /* rgb(0, 2, 73) navy
