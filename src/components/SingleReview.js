@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getReviewComments, getSingleReview } from "../Utils/api";
+import AddComment from "./AddComment";
 import VoteReview from "./VoteReview";
 
 export default function SingleReview() {
@@ -43,6 +44,7 @@ export default function SingleReview() {
           })}
         </ul>
       </comments>
+      <AddComment />
     </div>
   );
 }
