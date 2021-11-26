@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { UserContext } from "../contexts/user";
+import { postComment } from "../Utils/api";
 
-export default function AddComment() {
+export default function AddComment({ review_id, setComments }) {
   const { user } = useContext(UserContext);
 
   return (
@@ -22,9 +23,17 @@ export default function AddComment() {
               e.preventDefault();
               const comment = {
                 body: e.target.form[1].value,
-                author: user.username,
+                username: user.username,
+                review_id: Number(review_id),
               };
               console.log(comment);
+              postComment(Number(review_id), comment).then((res) => {
+                if (res.status === 201) {
+                  setComments([res]);
+                } else {
+                  return <h2>Oops! Something went wrong</h2>;
+                }
+              });
             }}
           >
             Post

@@ -18,7 +18,7 @@ export default function SingleReview() {
     getReviewComments(Number(review_id)).then((commentsFromServer) => {
       setComments(commentsFromServer);
     });
-  }, []);
+  }, [comments]);
 
   return (
     <div className="SingleReview">
@@ -44,7 +44,7 @@ export default function SingleReview() {
           })}
         </ul>
       </comments>
-      <AddComment />
+      <AddComment review_id={review_id} setComments={setComments} />
     </div>
   );
 }

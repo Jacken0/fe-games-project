@@ -29,3 +29,8 @@ export const patchVotes = (id, number) => {
     .patch(`/reviews/${id}`, { inc_votes: number })
     .then((res) => {});
 };
+export const postComment = (id, comment) => {
+  return gamesAPI.post(`/reviews/${id}/comments`, comment).then((res) => {
+    return res;
+  });
+};
