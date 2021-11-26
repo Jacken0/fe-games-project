@@ -18,7 +18,7 @@ export default function VoteReview({ singleReview }) {
   };
 
   return (
-    <>
+    <votes>
       <h4>Votes: {singleReview.votes + addedVote}</h4>
       <button onClick={handleClick} className="Vote__Button">
         +
@@ -26,6 +26,6 @@ export default function VoteReview({ singleReview }) {
       <button onClick={handleClick2} className="Vote__Button">
         -
       </button>
-    </>
+    </votes>
   );
 }

@@ -12,9 +12,10 @@ h2 {
   font-size: xxx-large;
 }
 img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50% 50% 25% 25%;
+  width: 80%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 20px;
   border: solid 2px rgb(246, 73, 13);
 }
 .App {
@@ -121,10 +122,11 @@ img {
 }
 .SingleReview {
   display: grid;
-  grid-template-rows: min-content auto;
+  grid-template-rows: min-content 180px min-content;
   grid-template-areas:
     "single_review"
-    "review_comments";
+    "review_comments"
+    "text_box";
 }
 .SingleReview review {
   grid-area: single_review;
@@ -132,11 +134,33 @@ img {
 .SingleReview comments {
   grid-area: review_comments;
   overflow: scroll;
+  scroll-behavior: auto;
+}
+.SingleReview img {
+  width: 300px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+.votes {
+  display: inline;
 }
 .Vote__Button {
-  height: 60px;
+  height: 30px;
   width: 30px;
-  font-size: xx-large;
+  font-size: x-large;
+}
+fieldset {
+  grid-area: text_box;
+  border: none;
+}
+textarea {
+  width: 60%;
+  height: 100px;
+  text-align: initial;
+  background-color: rgb(242, 240, 224);
+  margin-left: 30px;
 }
 
 /* rgb(246, 73, 13) orange */

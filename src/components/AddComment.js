@@ -5,17 +5,21 @@ import { postComment } from "../Utils/api";
 export default function AddComment({ review_id, setComments }) {
   const { user } = useContext(UserContext);
 
+  function clearText() {
+    document.getElementById("comment_body").value = "";
+  }
+
   return (
     <div>
       <form>
         <fieldset>
           <legend>Post a comment</legend>
-          <input
+          <textarea
             type="text"
             name="comment_body"
             id="comment_body"
             required
-          ></input>
+          ></textarea>
           <button
             type="submit"
             id="submit"
@@ -26,7 +30,7 @@ export default function AddComment({ review_id, setComments }) {
                 username: user.username,
                 review_id: Number(review_id),
               };
-              console.log(comment);
+              clearText();
               postComment(Number(review_id), comment).then((res) => {
                 if (res.status === 201) {
                   setComments([res]);
