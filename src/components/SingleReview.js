@@ -21,7 +21,7 @@ export default function SingleReview() {
   }, [comments]);
 
   return (
-    <div className="SingleReview">
+    <main className="SingleReview">
       <review>
         <img src={singleReview.review_img_url} alt={singleReview.title} />
         <h3>{singleReview.title}</h3>
@@ -45,6 +45,6 @@ export default function SingleReview() {
         </ul>
       </comments>
       <AddComment review_id={review_id} setComments={setComments} />
-    </div>
+    </main>
   );
 }
