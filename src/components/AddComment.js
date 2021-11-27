@@ -23,7 +23,7 @@ export default function AddComment({ review_id, setComments }) {
           <button
             type="submit"
             id="submit"
-            onClick={(e) => {
+            onSubmit={(e) => {
               e.preventDefault();
               const comment = {
                 body: e.target.form[1].value,

@@ -2,21 +2,25 @@ import { useEffect, useState } from "react";
 import { getReviews } from "../Utils/api";
 import { Link, useLocation } from "react-router-dom";
 import Sidebar from "./Sidebar";
+import Sort from "./Sort";
 
 export default function Reviews(categories) {
   const [reviews, setReviews] = useState([]);
+  const [sort, setSort] = useState("reviews.created_at");
+  const [order, setOrder] = useState("asc");
 
   const { search } = useLocation();
 
   useEffect(() => {
-    getReviews(search).then((reviewsFromServer) => {
+    getReviews(search, sort, order).then((reviewsFromServer) => {
       setReviews(reviewsFromServer);
     });
-  }, [search]);
+  }, [search, sort, order]);
 
   return (
     <main className="Reviews">
       <h2>Reviews</h2>
+      <Sort setSort={setSort} setOrder={setOrder} />
       <ul className="Reviews_List">
         {reviews.map((reviewData) => {
           return (

@@ -21,10 +21,10 @@ export default function VoteReview({ singleReview }) {
     <votes>
       <h4>Votes: {singleReview.votes + addedVote}</h4>
       <button onClick={handleClick} className="Vote__Button">
-        +
+        ⬆️
       </button>
       <button onClick={handleClick2} className="Vote__Button">
-        -
+        ⬇️
       </button>
     </votes>
   );

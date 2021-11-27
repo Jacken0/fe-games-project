@@ -4,10 +4,15 @@ const gamesAPI = axios.create({
   baseURL: "https://jacks-games.herokuapp.com/api",
 });
 
-export const getReviews = (search) => {
-  return gamesAPI.get(`/reviews${search}`).then((res) => {
-    return res.data.reviews;
-  });
+export const getReviews = (search, sort, order) => {
+  console.log(search.slice(10), sort, order);
+  return gamesAPI
+    .get(`/reviews`, {
+      params: { category: search.slice(10), sort_by: sort, order: order },
+    })
+    .then((res) => {
+      return res.data.reviews;
+    });
 };
 export const getCategories = () => {
   return gamesAPI.get("/categories").then((res) => {
