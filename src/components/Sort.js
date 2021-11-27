@@ -11,7 +11,7 @@ export default function Sort({ setSort, setOrder }) {
       >
         <option value="reviews.created_at">Date</option>
         <option value="comment_count">Comments</option>
-        <option value="review.votes">Votes</option>
+        <option value="reviews.votes">Votes</option>
       </select>
       <select
         onChange={(e) => {
