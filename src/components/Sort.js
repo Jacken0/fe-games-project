@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export default function Sort({ setSort, setOrder }) {
   return (
     <div>
@@ -15,7 +13,6 @@ export default function Sort({ setSort, setOrder }) {
       </select>
       <select
         onChange={(e) => {
-          console.log(e.currentTarget.value);
           setOrder(e.currentTarget.value);
         }}
       >

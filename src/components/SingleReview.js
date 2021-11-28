@@ -19,9 +19,9 @@ export default function SingleReview() {
       setComments(commentsFromServer);
     });
   }, [comments]);
-
+  console.log(comments);
   return (
-    <main className="SingleReview">
+    <div className="SingleReview">
       <review>
         <img src={singleReview.review_img_url} alt={singleReview.title} />
         <h3>{singleReview.title}</h3>
@@ -45,6 +45,6 @@ export default function SingleReview() {
         </ul>
       </comments>
       <AddComment review_id={review_id} setComments={setComments} />
-    </main>
+    </div>
   );
 }

@@ -5,7 +5,6 @@ const gamesAPI = axios.create({
 });
 
 export const getReviews = (search, sort, order) => {
-  console.log(search.slice(10), sort, order);
   return gamesAPI
     .get(`/reviews`, {
       params: { category: search.slice(10), sort_by: sort, order: order },
