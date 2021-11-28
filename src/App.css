@@ -180,7 +180,12 @@ fieldset button {
   grid-area: Main;
   background-color: rgb(0, 2, 73);
 }
-
+.ErrorPage {
+  grid-area: Main;
+  background-color: rgb(0, 2, 73);
+  margin-top: 10%;
+  margin-bottom: 100%;
+}
 /* rgb(246, 73, 13) orange */
 /* rgb(0, 2, 73) navy
 rgb(29, 206, 216) cyan

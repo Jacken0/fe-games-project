@@ -10,6 +10,7 @@ import SingleReview from "./components/SingleReview";
 import { getCategories } from "./Utils/api";
 import { UserProvider } from "./contexts/user";
 import UsersComments from "./components/UsersComments";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
   const [categories, setCategories] = useState([]);
@@ -43,6 +44,7 @@ function App() {
           <Route path="/reviews/:review_id" element={<SingleReview />} />
           <Route path="/my_comments" element={<UsersComments />} />
           <Route path="/login" element={<Login />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
     </UserProvider>
