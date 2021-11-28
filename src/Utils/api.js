@@ -38,3 +38,19 @@ export const postComment = (id, comment) => {
     return res;
   });
 };
+export const getUsersComments = ({ username }) => {
+  return gamesAPI.get("/comments").then((res) => {
+    const userComments = [];
+    res.data.comments.map((comment) => {
+      if (comment.author === username) {
+        userComments.push(comment);
+      }
+    });
+    return userComments;
+  });
+};
+export const deleteComment = (id) => {
+  return gamesAPI.delete(`/comments/${id}`).then((res) => {
+    return res;
+  });
+};

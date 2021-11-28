@@ -36,7 +36,7 @@ export default function SingleReview() {
             return (
               <li>
                 <h3>{comment.author}</h3>
-                <p>{comment.created_at}</p>
+                <p>{comment.created_at.slice(0, 10)}</p>
                 <p>{comment.body}</p>
                 <p>{comment.votes}</p>
               </li>

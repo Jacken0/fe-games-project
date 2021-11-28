@@ -12,6 +12,9 @@ export default function Nav() {
       <Link to="/login" className="Nav__Link" id="Nav__Login">
         Login
       </Link>
+      <Link to="/my_comments" className="Nav__Link" id="Nav__Comments">
+        My Comments
+      </Link>
     </nav>
   );
 }
