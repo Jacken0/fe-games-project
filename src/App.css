@@ -132,11 +132,11 @@ main {
     "review_comments"
     "text_box";
 }
-.SingleReview review {
+.SingleReview main {
   margin: 10px;
   grid-area: single_review;
 }
-.SingleReview comments {
+.ReviewComments {
   grid-area: review_comments;
   overflow: scroll;
   scroll-behavior: auto;

@@ -23,14 +23,14 @@ export default function SingleReview() {
 
   return (
     <div className="SingleReview">
-      <div>
+      <main>
         <img src={singleReview.review_img_url} alt={singleReview.title} />
         <h3>{singleReview.title}</h3>
         <h3>Author: {singleReview.owner}</h3>
         <h3>Designer: {singleReview.designer}</h3>
         <p>{singleReview.review_body}</p>
         <VoteReview singleReview={singleReview} />
-      </div>
+      </main>
       <div className="ReviewComments">
         <ul>
           {comments.map((comment) => {
