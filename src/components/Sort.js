@@ -16,8 +16,8 @@ export default function Sort({ setSort, setOrder }) {
           setOrder(e.currentTarget.value);
         }}
       >
-        <option value="asc">Asc</option>
         <option value="desc">Desc</option>
+        <option value="asc">Asc</option>
       </select>
     </div>
   );

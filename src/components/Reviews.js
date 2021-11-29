@@ -7,7 +7,7 @@ import Sort from "./Sort";
 export default function Reviews(categories) {
   const [reviews, setReviews] = useState([]);
   const [sort, setSort] = useState("reviews.created_at");
-  const [order, setOrder] = useState("asc");
+  const [order, setOrder] = useState("desc");
 
   const { search } = useLocation();
 
