@@ -4,14 +4,14 @@ export default function Login({ setUser }) {
   };
 
   return (
-    <login className="Login">
+    <div className="Login">
       <h2>LOGIN</h2>
       <p>Please log in</p>
       <form onSubmit={handleSubmit}>
         <input type="text" name="Username" id="username"></input>
         <button type="submit">Login</button>
-        <h2 id="Error"></h2>
+        <h2 id="Error">Error</h2>
       </form>
-    </login>
+    </div>
   );
 }

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Sidebar({ categories, setCategories }) {
   return (
-    <sidebar className="Sidebar">
+    <div className="Sidebar">
       <ul>
         <li key="all categories">
           <Link to={"/reviews"}>
@@ -20,6 +20,6 @@ export default function Sidebar({ categories, setCategories }) {
           );
         })}
       </ul>
-    </sidebar>
+    </div>
   );
 }

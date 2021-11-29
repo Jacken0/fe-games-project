@@ -41,7 +41,7 @@ export const postComment = (id, comment) => {
 export const getUsersComments = ({ username }) => {
   return gamesAPI.get("/comments").then((res) => {
     const userComments = [];
-    res.data.comments.map((comment) => {
+    res.data.comments.forEach((comment) => {
       if (comment.author === username) {
         userComments.push(comment);
       }

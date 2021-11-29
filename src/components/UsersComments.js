@@ -10,11 +10,12 @@ export default function UsersComments() {
     getUsersComments(user).then((commentsFromServer) => {
       setComments(commentsFromServer);
     });
-  }, [comments]);
+  }, [comments, user]);
+
   const handleClick = (e) => {
     e.preventDefault();
     deleteComment(e.target.id).then((res) => {
-      setComments([res]);
+      setComments([]);
     });
   };
 

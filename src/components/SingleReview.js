@@ -13,28 +13,29 @@ export default function SingleReview() {
     getSingleReview(Number(review_id)).then((review) => {
       setSingleReview(review);
     });
-  }, []);
+  }, [review_id]);
+
   useEffect(() => {
     getReviewComments(Number(review_id)).then((commentsFromServer) => {
       setComments(commentsFromServer);
     });
-  }, [comments]);
-  console.log(comments);
+  }, [comments, review_id]);
+
   return (
     <div className="SingleReview">
-      <review>
+      <div>
         <img src={singleReview.review_img_url} alt={singleReview.title} />
         <h3>{singleReview.title}</h3>
         <h3>Author: {singleReview.owner}</h3>
         <h3>Designer: {singleReview.designer}</h3>
         <p>{singleReview.review_body}</p>
         <VoteReview singleReview={singleReview} />
-      </review>
-      <comments>
+      </div>
+      <div className="ReviewComments">
         <ul>
           {comments.map((comment) => {
             return (
-              <li>
+              <li key={comment.comment_id}>
                 <h3>{comment.author}</h3>
                 <p>{comment.created_at}</p>
                 <p>{comment.body}</p>
@@ -43,7 +44,7 @@ export default function SingleReview() {
             );
           })}
         </ul>
-      </comments>
+      </div>
       <AddComment review_id={review_id} setComments={setComments} />
     </div>
   );

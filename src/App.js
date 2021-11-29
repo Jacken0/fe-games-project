@@ -19,6 +19,7 @@ function App() {
       setCategories(categoriesFromServer);
     });
   }, []);
+
   return (
     <UserProvider>
       <div className="App">
